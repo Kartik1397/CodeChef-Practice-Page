@@ -1,0 +1,22 @@
+.suggestion {
+  position: absolute;
+  z-index: 100;
+  margin-top: 40px;
+  padding-top: 8px;
+  background-color: white;
+  width: 53vw;
+  padding: 0 20px;
+  font-size: 14px;
+  box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.08);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.suggestion div {
+  line-height: 45px;
+  cursor: pointer;
+}
+
+.highlight {
+  border-bottom: 2px solid red;
+}

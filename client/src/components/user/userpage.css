@@ -1,0 +1,103 @@
+.user-page {
+  padding: 70px 100px;
+  width: 70vw;
+}
+
+@media only screen and (max-width: 1200px) {
+  .user-page {
+    padding: 5vh 5vw;
+    width: 100%;
+  }
+}
+
+.username {
+  font-size: 2em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .username {
+    font-size: 1.6em;
+  }
+}
+
+.fullname {
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.firstname {
+  margin-right: 10px;
+}
+
+.user-page .label {
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1200px) {
+  .user-page .label {
+    font-size: 15px;
+  }
+  .fullname {
+    font-size: 15px;
+  }
+}
+
+.user-page .title {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 1200px) {
+  .user-page .title {
+    font-size: 18px;
+  }
+}
+
+.user-page .button {
+  width: 100px;
+  line-height: 35px;
+  text-align: center;
+  background-color: #0574da;
+  margin-right: 15px;
+  margin-top: 20px;
+  color: white;
+  box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .user-page .button {
+    font-size: 12px;
+    line-height: 30px;
+    width: 90px;
+    font-weight: 500;
+  }
+}
+
+.tag-box {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tag-box .tag {
+  cursor: auto;
+}
+
+.tag-box .cross {
+  padding-left: 7px;
+  padding-right: 2px;
+  border-left: 1px solid gray;
+  color: rgba(255, 0, 0, 0.7);
+  font-weight: 600;
+  cursor: pointer;
+}

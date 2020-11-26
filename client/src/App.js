@@ -1,58 +1,60 @@
+// React
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// Utils
+import jwt_decoded from 'jwt-decode';
+import setAuthToken from './utils/setAuthToken';
+
+//Redux
+import store from './app/store';
+import { connect } from 'react-redux';
+import { getTags, getTagProblemMap } from './actions/tagsAction';
+import { setCurrentUser } from './actions/authAction';
+
+// Components
+import Header from './components/common/Header';
+import PracticePage from './components/PracticePage';
+import UserPage from './components/user/UserPage';
+
+// Style
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+if (localStorage.jwtToken) {
+  const token = JSON.parse(localStorage.jwtToken);
+  setAuthToken(token);
+  const decoded = jwt_decoded(token);
+  store.dispatch(setCurrentUser(decoded.user));
 }
 
-export default App;
+class App extends React.Component {
+  componentDidMount() {
+    this.props.getTags();
+    if (localStorage.jwtToken) {
+      this.props.getTagProblemMap();
+    }
+  }
+
+  render() {
+    return (
+      <>
+        <Router>
+          <Header title="CODECHEF"></Header>
+          <Route exact path="/">
+            <PracticePage></PracticePage>
+          </Route>
+          <Route exact path="/user">
+            <UserPage></UserPage>
+          </Route>
+        </Router>
+      </>
+    );
+  }
+}
+
+var mapStateToProps = state => ({});
+
+export default connect(
+  mapStateToProps,
+  { getTags, getTagProblemMap }
+)(App);

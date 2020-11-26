@@ -1,0 +1,266 @@
+.page {
+  margin: 0 100px;
+  display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page {
+    margin: 0 5vw;
+    width: 90vw;
+  }
+}
+
+.page .container {
+  width: 60vw;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page .container {
+    width: 100%;
+  }
+}
+
+.page .title {
+  line-height: 65px;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page .title {
+    margin-top: 30px;
+    font-size: 18px;
+  }
+}
+
+.page .buttons {
+  display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page .buttons {
+    column-gap: 10px;
+  }
+}
+
+.page .button {
+  margin-right: 15px;
+  width: 100px;
+  line-height: 35px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page .button {
+    font-size: 12px;
+    margin-right: 0;
+  }
+}
+
+.page .active {
+  background-color: white;
+}
+
+.filter {
+  justify-content: space-between;
+}
+
+.filter .input {
+  width: 53vw;
+  height: 45px;
+  box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.08);
+
+  /* padding: 0 20px;
+  border: none;
+  margin-right: 15px;
+  width: 53vw;
+  height: 45px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 5px; */
+}
+
+@media only screen and (max-width: 1200px) {
+  .filter .input {
+    width: 100%;
+    margin-right: 15px;
+  }
+}
+
+.filter .button {
+  line-height: 45px;
+  background-color: #0574da;
+  color: white;
+  box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.08);
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .filter.buttons {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .filter .button {
+    line-height: 35px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .table-section {
+    overflow-x: auto;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+  }
+
+  .table {
+    width: 800px;
+    margin-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+.table .row {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  min-height: 45px;
+  line-height: normal;
+  margin-bottom: 8px;
+  font-size: 14px;
+  background-color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+  .table .row {
+    line-height: normal;
+    font-size: 12px;
+    min-height: 35px;
+  }
+}
+
+.table .head {
+  background-color: #262a2d;
+  color: white;
+}
+
+.table .row .col {
+  text-align: center;
+  width: 8vw;
+}
+
+.table .row .col:last-child {
+  width: 3vw;
+}
+
+.add-tag-button {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  font-size: 1.3em;
+}
+
+.add-tag-button:hover {
+  transform: scale(1.3);
+}
+
+.table .row .col:nth-child(1) {
+  width: 4vw;
+}
+
+.table .row .col:nth-child(4) {
+  width: 5vw;
+}
+
+.table .row .col:nth-child(2) {
+  width: 40vw;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table .head .col:nth-child(2) {
+  text-align: center;
+  cursor: auto;
+}
+
+.table .row {
+  border-left: 5px solid transparent;
+  transition: all 0.1s ease-in;
+}
+
+@media only screen and (max-width: 1200px) {
+  .table .row {
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 1fr 1fr;
+    place-items: center center;
+  }
+
+  .table .row .col:nth-child(1) {
+    width: 100%;
+  }
+  .table .row .col:nth-child(2) {
+    width: 100%;
+    justify-content: left;
+  }
+  .table .row .col:nth-child(4) {
+    width: 100%;
+  }
+}
+
+.table .row:hover {
+  border-left: 5px solid rgba(0, 0, 0, 0.3);
+}
+
+.problem-tags {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  margin: 10px 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .problem-tags {
+    margin: 10px 0;
+    margin-left: 15px;
+    row-gap: 7px;
+  }
+}
+
+.problem-tag {
+  display: inline-block;
+  line-height: normal;
+  padding: 3px 7px;
+  background-color: rgba(52, 235, 100, 0.6);
+  margin-left: auto;
+  margin-right: 5px;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.95);
+}
+
+@media only screen and (max-width: 1200px) {
+  .problem-tag {
+    margin-left: 0px;
+  }
+}
+
+.add-tags {
+  margin-top: 20px;
+}
+
+.custom-tag {
+  background-color: rgba(247, 209, 17, 0.6);
+}
+
+.author-tag {
+  background-color: rgba(17, 209, 247, 0.6);
+}

@@ -1,0 +1,92 @@
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 0 100px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    padding: 0 5vw;
+  }
+}
+
+.header .title {
+  line-height: 50px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header .title {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.header .buttons {
+  display: flex;
+  align-items: center;
+}
+
+.header .button {
+  line-height: 33px;
+  width: 100px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: #9605da;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header .button {
+    width: 90px;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 0 5px;
+  }
+}
+
+.userControll {
+  line-height: 33px;
+  padding: 0 30px;
+  text-align: center;
+  margin: 0 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: #9605da;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .userControll {
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 5px;
+  }
+}
+
+p::before {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  display: inline-block;
+  content: "";
+  border-radius: 100%;
+  transform: translateX(-100%) translateY(23%);
+}
+
+@media only screen and (max-width: 1200px) {
+  p::before {
+    height: 15px;
+    width: 15px;
+  }
+}
