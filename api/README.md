@@ -2,7 +2,7 @@
 
 JSON API for authentication, problems and tags.
 
-## Availabel Routes
+## Available Routes
 ```
 base_url: https://ccpractice.ml/api
 ```
